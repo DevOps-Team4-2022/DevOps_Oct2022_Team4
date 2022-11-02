@@ -1,5 +1,6 @@
 import math
 
+#functions############################################################
 def add(a, b):
     return a + b
 
@@ -12,13 +13,20 @@ def multiply(a, b):
 def divide(a, b):
     return a / b
 
+def power(a,b):
+    return a**b
 
-print("Please select the type of operations")
-print("1. Standard Arithmetic")
-print("2. Trigonometry ")
-#print("3. ")
+
+def main():
+    print("Please select the type of operations")
+    print("1. Standard Arithmetic")
+    print("2. Trigonometry ")
+    print("3. Exponent")
 #print("4. ")
+######################################################################
+
 while True:
+    main()
     option = int(input("Enter type of operations: "))
     if option in (1,2,3,4):
         #Option 1: Arithmetic
@@ -42,7 +50,11 @@ while True:
                     print(num1, "*", num2, "=", multiply(num1, num2))
 
                 elif choice == 4:
-                    print(num1, "/", num2, "=", divide(num1, num2))
+                #produce error when 0/0
+                    if num1 == 0.0 and num2 ==0.0:
+                        print("Error")
+                    else:
+                        print(num1, "/", num2, "=", divide(num1, num2))
                     
         #Option 2: Trigonometry        
         elif option == 2:
@@ -72,7 +84,17 @@ while True:
             if choice == 6:
                 num = float(input("Enter radians number: ")) 
                 print(math.atan(num))
+
         #Option 3: 
+        elif option == 3:
+            num1 = float(input("Enter the base number: "))
+            num2 = float(input("Enter the power number: "))
+        #checking whether the function produces error
+            if power(num1,num2)>0 :
+                print(power(num1,num2))
+            else:
+                print("Error")
+
         #Option 4:  
     else:
         print("Invalid input, please try again.")
