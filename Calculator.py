@@ -26,13 +26,14 @@ def main():
     print("2. Trigonometry ")
     print("3. Exponent")
     print("4. Percentage")
-#print("5. ")
+    print("5. Square Root")
+
 ######################################################################
 
 while True:
     main()
     option = int(input("Enter type of operations: "))
-    if option in (1,2,3,4):
+    if option in (1,2,3,4,5):
         #Option 1: Arithmetic
         if option == 1:
             print("Please select the type of Arithmetic")
@@ -104,6 +105,12 @@ while True:
             num1 = float(input("Enter the value number: "))
             num2 = float(input("Enter the total number: "))
             print(num1, "/", num2, "*", "100", "=", multiply(divide(num1, num2), 100), "%")
+        
+        #Option 5:  Square Root
+        elif option == 5:
+            num = float(input('Enter a number: '))
+            num_sqrt = num ** 0.5
+            print('The square root of %0.2f is %0.2f'%(num ,num_sqrt))
 
     else:
         print("Invalid input, please try again.")
