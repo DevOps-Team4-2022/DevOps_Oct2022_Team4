@@ -13,8 +13,11 @@ def multiply(a, b):
 def divide(a, b):
     return a / b
 
-def power(a,b):
+def power(a, b):
     return a**b
+
+def percentage(a, b):
+    return a / b * 100
 
 
 def main():
@@ -22,7 +25,8 @@ def main():
     print("1. Standard Arithmetic")
     print("2. Trigonometry ")
     print("3. Exponent")
-#print("4. ")
+    print("4. Percentage")
+#print("5. ")
 ######################################################################
 
 while True:
@@ -85,7 +89,7 @@ while True:
                 num = float(input("Enter radians number: ")) 
                 print(math.atan(num))
 
-        #Option 3: 
+        #Option 3: Exponent
         elif option == 3:
             num1 = float(input("Enter the base number: "))
             num2 = float(input("Enter the power number: "))
@@ -95,7 +99,12 @@ while True:
             else:
                 print("Error")
 
-        #Option 4:  
+        #Option 4:  Percentage
+        elif option == 4:
+            num1 = float(input("Enter the value number: "))
+            num2 = float(input("Enter the total number: "))
+            print(num1, "/", num2, "*", "100", "=", multiply(divide(num1, num2), 100), "%")
+
     else:
         print("Invalid input, please try again.")
         
